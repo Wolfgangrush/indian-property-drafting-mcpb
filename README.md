@@ -36,7 +36,6 @@ Claude Desktop App ≥ 0.10.0 · Python ≥ 3.10 · `pandoc` for .docx · `pdfto
 Zero data collection. Three-layer privacy firewall. Canonical policy: **<https://wolfgangrush.github.io/privacy/>**
 
 
-
 ## Architecture · how the six agents work
 
 This connector runs a strict six-agent pipeline locally on your machine:
@@ -107,13 +106,23 @@ This is the connector's contribution to your **Section 8(5) DPDP Act 2023** safe
 > only. Real values are re-substituted at the final docx render step on the
 > user's local machine. No real identifying data leaves the case folder.
 
+## Examples
+
+Three example prompts that demonstrate core functionality. Full prompt text with expected tool sequence is in `SAMPLE-CASES/README.md`.
+
+- *"Draft a suit for partition of joint family property under the Hindu Succession Act 1956."*
+- *"Draft a Section 6 Specific Relief Act suit for recovery of possession dispossessed without due process."*
+- *"Draft an injunction suit under Order XXXIX Rules 1 and 2 CPC restraining alienation."*
+
+See `SAMPLE-CASES/README.md` for the full prompt text and the expected tool-call sequence the Anthropic reviewer can use to exercise the pipeline end-to-end.
+
 ## License
 
 MIT.
 
 ## Publisher
 
-**Rushikesh R. Mahajan**, Advocate, Bombay HC Nagpur, publishing as **Wolfgang Rush**. advrushikeshravindramahajan@gmail.com
+**Wolfgang Rush** — independent open-source legal-tech publisher. Contact: wolfgangrush@gmail.com
 
 ## Source
 
