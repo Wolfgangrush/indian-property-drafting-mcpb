@@ -1,0 +1,112 @@
+{
+  "manifest_version": "0.4",
+  "name": "wolfgang-indian-property-drafting",
+  "display_name": "Wolfgang Rush — Indian Property & Conveyancing Drafting · Claude Desktop Extension",
+  "version": "0.1.4",
+  "description": "Drafting connector for Indian Civil Courts (property suits, partition, declaration, possession). STRICT SIX-AGENT PIPELINE: Reader → Format → Drafter → Verifier → Refiner → Overseer, producing six named artifacts (case-facts.md, format-shell.md, draft-v1.docx, verification-report.md, draft-v2.docx, final-draft.docx). MANDATORY INVOCATION ORDER: (1) call get_agent_instructions() with NO arguments FIRST to receive the full orchestration script, (2) follow every step in that script in order, (3) save every intermediate artifact via save_artifact, (4) save final-draft.docx via save_draft_as_docx. DO NOT write standalone python-docx or JavaScript scripts to generate output — invoke the pipeline tools directly. DO NOT skip the Verifier (anti-hallucination firewall) or the Overseer (opposing-counsel lens). Reader applies the privacy firewall — party names, addresses, identifying numbers, financial figures substituted with structural placeholders before any downstream agent processes the facts. Zero data leaves the user's machine.",
+  "long_description": "Sale, gift, mortgage, lease, partition, settlement, exchange, release, wakf, private-trust deeds + title-investigation reports. Stamp + Registration + Suraj Lamp compliance. 8 State exemplars. Local-execution. Zero data collection. MIT-licensed.",
+  "author": {
+    "name": "Wolfgang Rush",
+    "email": "advrushikeshravindramahajan@gmail.com",
+    "url": "https://wolfgangrush.github.io"
+  },
+  "homepage": "https://wolfgangrush.github.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wolfgangrush/indian-property-drafting-mcpb"
+  },
+  "documentation": "https://github.com/Wolfgangrush/indian-property-drafting-mcpb/blob/main/README.md",
+  "support": "https://github.com/Wolfgangrush/indian-property-drafting-mcpb/issues",
+  "icon": "icon.png",
+  "license": "MIT",
+  "keywords": [
+    "law",
+    "legal",
+    "drafting",
+    "india",
+    "property",
+    "conveyancing",
+    "sale-deed",
+    "gift-deed",
+    "mortgage",
+    "partition",
+    "settlement",
+    "wakf",
+    "stamp-act",
+    "registration-act",
+    "suraj-lamp",
+    "wolfgang-rush",
+    "mcpb",
+    "claude-desktop"
+  ],
+  "privacy_policies": [
+    "https://wolfgangrush.github.io/privacy/"
+  ],
+  "server": {
+    "type": "uv",
+    "entry_point": "server/main.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "${__dirname}",
+        "run",
+        "server/main.py"
+      ]
+    }
+  },
+  "tools": [
+    {
+      "name": "list_case_types",
+      "description": "List all property case types this connector can draft."
+    },
+    {
+      "name": "get_case_type_format",
+      "description": "Get the drafting format for a property case type."
+    },
+    {
+      "name": "get_agent_instructions",
+      "description": "MANDATORY FIRST CALL with no arguments — returns the full orchestration script with every step and tool call enumerated. Optional agent_name argument returns that single agent's persona instructions."
+    },
+    {
+      "name": "get_pleading_base",
+      "description": "Get the shared property drafting base structure."
+    },
+    {
+      "name": "list_states",
+      "description": "List the State exemplars available."
+    },
+    {
+      "name": "get_state_exemplar",
+      "description": "Get State-specific exemplar."
+    },
+    {
+      "name": "read_case_folder",
+      "description": "Read files in a case folder for fact extraction."
+    },
+    {
+      "name": "save_draft_as_docx",
+      "description": "Save markdown draft as filing-grade .docx."
+    },
+    {
+      "name": "create_case_folder",
+      "description": "Create the case folder for this drafting session on the user's machine under ~/Downloads/Wolfgang-Rush-Drafts/. Returns the folder path with an inputs/ subfolder."
+    },
+    {
+      "name": "save_artifact",
+      "description": "Save a pipeline artifact (case-facts.md, format-shell.md, draft-v1.md, verification-report.md, draft-v2.md, opposing-notes.md, or any input document) into the case folder. Required at the end of every agent step."
+    }
+  ],
+  "tools_generated": false,
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "python": ">=3.10"
+    }
+  }
+}
