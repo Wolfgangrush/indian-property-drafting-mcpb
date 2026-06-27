@@ -1,3 +1,23 @@
+<div align="center">
+
+<img src="docs/banner.png" width="820"/>
+
+**A strict six-agent drafting pipeline for Indian Civil Court property litigation — suits for partition, declaration, and possession.**
+
+Visit the live site: [wolfgangrush.github.io](https://wolfgangrush.github.io)
+
+</div>
+
+<div align="center">
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Pipeline](https://img.shields.io/badge/pipeline-6%20agents-2ea44f)
+![Courts](https://img.shields.io/badge/courts-Indian%20Civil-orange)
+![Artifacts](https://img.shields.io/badge/artifacts-6%20named-informational)
+
+</div>
+
+
 # wolfgang_rush — Indian Property & Conveyancing Drafting
 
 **MCPB Desktop Extension** for Indian advocates using Claude Desktop App. Local-execution. Zero data collection.
